@@ -6,9 +6,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <style>
+    	body {background-color: cyan}
+    </style>
+
+  </head>
   <body>
+  
+  	<nav>
+  		<ul>
+  			<li>Home</li>
+  			<li>About</li>
+  			<li>Contact</li>
+  		</ul>
+  	</nav>
+
     <%= yield %>
+
+    <footer>
+    	&copy; 2016 Bike Berlin
+    </footer>
+
   </body>
 </html>
