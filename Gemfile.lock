@@ -97,6 +97,7 @@ GEM
     notiffany (0.1.0)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    pg (0.18.4-x86-mingw32)
     pkg-config (1.1.7)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -182,6 +183,7 @@ DEPENDENCIES
   guard (= 2.14.0)
   jbuilder (~> 2.5)
   jquery-rails
+  pg
   puma (~> 3.0)
   rails (~> 5.0.0)
   sass-rails (~> 5.0)
