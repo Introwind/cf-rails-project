@@ -1,12 +1,25 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+	position: relative;
+	min-height: 100%;
+}
 
 body {
 	background-color: #a5dff9; 
 	font-family: helvetica, arial, tahoma, sans-serif;
 	text-align: center;
-	padding-top: 50px;
+	margin-top: 60px;
+	margin-bottom: 40px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+	background-color: #e85a71;
 }
 
 h1 {
@@ -22,15 +35,7 @@ h1 {
 }
 
 #bike {
-	height: 75%;
-	width: 75%;
+	height: 50%;
+	width: 50%;
 	margin: 0 auto;
-}
-
-footer {
-	position: absolute;
-	height: 51px;
-	width: 100%;
-	border-top: 1px solid #e7e7e7;
-	background-color: #e85a71;
 }
