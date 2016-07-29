@@ -7,27 +7,25 @@ html {
 }
 
 body {
-	background-color: #a5dff9; 
+	background-color: #444f59; 
 	font-family: helvetica, arial, tahoma, sans-serif;
 	text-align: center;
-	margin-top: 60px;
-	margin-bottom: 40px;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+	color: red;
 }
 
 .footer {
 	position: absolute;
-	bottom: 0;
-	height: 40px;
+	bottom: 0px;
+	height: 50px;
 	width: 100%;
-	background-color: #e85a71;
-}
-
-h1 {
-	color: red;
+	background-color: #263959;
+	border-top: 1px solid #e7e7e7;
 }
 
 .navbar {
-	background-color: #e85a71;
+	background-color: #263959;
 }
 
 .collapse .nav li a {
@@ -35,7 +33,8 @@ h1 {
 }
 
 #bike {
-	height: 50%;
-	width: 50%;
+	width: 80%;
 	margin: 0 auto;
+	border: 2px solid #263959;
+	border-radius: 2px;
 }
