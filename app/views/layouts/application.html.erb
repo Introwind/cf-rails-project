@@ -11,6 +11,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
+
   </head>
   <body>
 
@@ -29,9 +30,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="/static_pages/index.html">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="/static_pages/about.html">About</a></li>
-        <li><a href="/static_pages/contact.html">Contact</a></li>
+        <li class="<%= is_active?('/') %>"><%= link_to "Home", '/' %></li>
+        <li class="<%= is_active?('/static_pages/about') %>"><%= link_to "About", '/static_pages/about' %></li>
+        <li class="<%= is_active?('/static_pages/contact') %>"><%= link_to "Contact", '/static_pages/contact' %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
