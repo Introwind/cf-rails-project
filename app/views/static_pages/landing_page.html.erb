@@ -1,0 +1,8 @@
+<h2>Featured Product</h2>
+<div class="container">
+<% if @featured_product.present? %>
+  <%= @featured_product.name %>
+  <%= image_tag(@featured_product.image_url, class: "img-responsive") %>
+  <%= @featured_product.price %>
+<% end %>
+</div>
