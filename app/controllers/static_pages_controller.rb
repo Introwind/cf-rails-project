@@ -9,4 +9,8 @@ class StaticPagesController < ApplicationController
   	@products = Product.limit(3)
   end
 
+  def sale_item
+    @product_sale = Product.first
+  end
+
 end
