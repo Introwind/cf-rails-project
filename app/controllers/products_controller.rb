@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @productstotal = Product.all
+    @first = Product.first
   if Rails.env.production?
 
     if params[:q]
