@@ -3,10 +3,9 @@
 
     <% if product.created_at > 3.days.ago..Time.now %>
       <h4><span class="label label-warning">New!</span></h4>
-      <% elsif product.price <= 500 %>
+      <% elsif product.price(try) <= 500 %>
       <h4><span class="label label-info">Great Value!</span></h4>
       <% else %>
-      <p> nothing </p>
       <br>
     <% end %>
 
