@@ -6,25 +6,19 @@ class ProductsController < ApplicationController
   def index
     @productstotal = Product.all
     @first = Product.first
-  if Rails.env.production?
 
     if params[:q]
       search_term = params[:q]
-      @products = Product.where("name ilike ?", "%#{search_term}%")
+
+      if Rails.env.production?
+        @products = Product.where("name ilike ? OR colour ilike ?", "%#{search_term}%", "%#{search_term}%")
+      else
+        @products = Product.where("name LIKE ? OR colour LIKE ?", "%#{search_term}%", "%#{search_term}%")
+      end
+
     else
-      @products = Product.all
+      @products = Product.all      
     end
-
-  else
-
-    if params[:q]
-      search_term = params[:q]
-      @products = Product.where("name LIKE ?", "%#{search_term}%")
-    else
-      @products = Product.all
-    end
-
-  end
 
   end
 
