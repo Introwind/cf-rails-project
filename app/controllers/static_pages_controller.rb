@@ -15,11 +15,11 @@ class StaticPagesController < ApplicationController
   end
 
   def thank_you
-    @products = Product.where(price: "0".."500")
     @name = params[:name]
     @email = params[:email]
     @message = params[:message]
     UserMailer.contact_form(@email, @name, @message).deliver_now
+    @products = Product.where(price: "0".."500")
   end
 
 end
