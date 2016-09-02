@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -25,3 +26,23 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+=======
+<div class="container">
+  <div class="row thumbnail">
+    <h2><%= @product.name %></h2><br>
+      <div class="col-md-5"><%= image_tag(@product.image_url, class: "img-responsive") %>
+      </div>
+      <div class="col-md-5 col-md-offset-1">
+        <blockquote class="blockquote"><p><%= @product.description %></p></blockquote>
+        <p><%= @product.colour %></p>
+        <p><%= @product.price %></p>
+        <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-primary btn-sm" %> |
+        <%= link_to 'Back', products_path, class: "btn btn-primary btn-sm" %>          
+      </div>
+      <div class="col-xs-6 col-xs-offset-3 reviewblock"><h3>User Reviews</h3>Umami chambray godard trust fund small batch, retro kinfolk wolf echo park hella single-origin coffee squid franzen. VHS sriracha bitters butcher, williamsburg trust fund swag jean shorts. Post-ironic venmo beard pabst. Small batch kogi VHS williamsburg banjo, shoreditch swag etsy fashion axe quinoa celiac chia occupy flexitarian church-key. Kogi +1 irony, four dollar toast selfies kickstarter dreamcatcher mlkshk cliche quinoa photo booth skateboard ennui neutra aesthetic. Drinking vinegar poutine listicle cornhole lumbersexual, vegan put a bird on it tousled 8-bit craft beer. Selvage church-key pork belly fixie <br>
+      <div class="btn btn-primary btn-xs">submit</div>
+      </div>
+  </div>
+</div>
+
+>>>>>>> master

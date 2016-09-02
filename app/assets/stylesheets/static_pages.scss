@@ -7,18 +7,19 @@ html {
 }
 
 body {
-	background-color: #8b8687; 
+	background-color: white; 
 	font-family: 'Ubuntu',helvetica, arial, tahoma, sans-serif;
 	text-align: center;
-	padding-bottom: 30px;
+	padding-bottom: 100px;
 	margin-bottom: 30px;
 	color: #353866;
 }
 
 .footer {
 	position: absolute;
+	padding-top: 40px;
 	bottom: 0px;
-	height: 50px;
+	height: 100px;
 	width: 100%;
 	background-color: #566270;
 	border-top: 1px solid #e7e7e7;

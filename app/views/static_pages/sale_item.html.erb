@@ -1,8 +1,12 @@
-<div class="jumbotron">
-	<h1>Our best value bike!</h1>
-	<p><%= @product_sale.name %></p>
-	<p><%= @product_sale.description %></p>
-	<%= image_tag(@product_sale.image_url, class: "img-responsive")	%>
-	<p>Only €<%= @product_sale.price %></p>
+<div class="container">
+	<div class="row">
+		<div class="thumbnail">
+			<h1>Our best value bike!</h1>
+			<h2><%= @product_sale.name %></h2>
+			<p><%= @product_sale.description %></p>
+			<%= image_tag(@product_sale.image_url, class: "img-responsive")	%>
+			<p>Only €<%= @product_sale.price %></p>
+		</div>
+	</div>
 </div>
 
