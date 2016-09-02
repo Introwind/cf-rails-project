@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	background-color: white; 
+	background-color: #f4f5f9; 
 	font-family: 'Ubuntu',helvetica, arial, tahoma, sans-serif;
 	text-align: center;
 	padding-bottom: 100px;
@@ -21,16 +21,33 @@ body {
 	bottom: 0px;
 	height: 100px;
 	width: 100%;
-	background-color: #566270;
-	border-top: 1px solid #e7e7e7;
+	background-color: #212121;
+	border-top: 3px solid #6d9d88;
 }
 
-.navbar {
-	background-color: #8b8687;
+.navbar-default, .navbar {
+	border-bottom: 3px solid #6d9d88;
+	background-color: #333030;
+	margin-bottom: 0;
+}
+
+.navbar-default .navbar-brand {
+	color: #d6ecfa;
+	font-family: 'Courgette', cursive, 'Oswald', sans-serif;
+	font-size: 2.2em;
 }
 
 .collapse .nav li a {
-	color: white;
+	// color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #d6ecfa;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #d6ecfa;
+	color: #333030;
 }
 
 #bike {
@@ -42,4 +59,30 @@ body {
 
 .img-responsive {
 	display: inline-block;
+	border: 1px solid #353866;
+}
+
+.thumbnail {
+	background-color: #EEEEEE;
+	border: 3px solid #353866;
+}
+
+
+// MEDIA QUERIES
+@media (max-width: 768px) {
+.navbar-nav {
+    margin: 7.5px auto;
+}
+}
+
+.jumbotron {
+	background-image: url(pexels-photo3.jpg);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 0;
+}
+
+.alert-dismissible {
+	margin-top: 10px;
 }
