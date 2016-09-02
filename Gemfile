@@ -43,7 +43,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'guard', '2.14.0'
 gem 'coffee-script-source', '1.8.0'
-gem 'ruby_dep'
+gem 'ruby_dep', '1.2.0'
 
 group :development, :test do
   gem 'sqlite3'
