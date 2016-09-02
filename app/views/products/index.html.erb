@@ -1,16 +1,15 @@
 <div class="container">
   <div class="row">
 
-<%= render template: "static_pages/_headtag"%>
-
-<div class="page-header">
-  <h1>Products<br><small><i>Check out our range of <%= @productstotal.count %> high quality bikes below!</i></small></h1>
-</div>
-
-    <%= render @products %>
-
+		<%= render template: "static_pages/_headtag"%>
+		
+		<div class="page-header">
+		  <h1>Products<br><small><i>Check out our range of <%= @productstotal.count %> high quality bikes 		below!</i></small></h1>
+		<%= link_to 'New Product', new_product_path, class: "btn btn-primary"%>
+		</div>
+		
+		    <%= render @products %>
+		
+		<br>
   </div>
 </div>
-
-<br>
-<%= link_to 'New Product', new_product_path %>
