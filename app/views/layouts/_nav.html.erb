@@ -30,7 +30,7 @@
           <% if current_user.first_name.present? %>
             <li class="<%= is_active?('/users/edit') %>"><%= link_to "<span class='glyphicon glyphicon-user'></span> #{current_user.first_name}".html_safe, edit_user_registration_path %></li>
           <% else %>
-            <li class="<%= is_active?('/users/edit')%>"><%= link_to "<span class='glyphicon glyphicon-user'></span> #{current_user.email}", edit_user_registration_path %></li>
+            <li class="<%= is_active?('/users/edit')%>"><%= link_to "<span class='glyphicon glyphicon-user'></span> #{current_user.email}".html_safe, edit_user_registration_path %></li>
           <% end %>
         <% else %>
           <li class="<%= is_active?('/users/sign_in') %>">

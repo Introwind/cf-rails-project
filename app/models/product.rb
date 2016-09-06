@@ -7,9 +7,13 @@ class Product < ApplicationRecord
 	end
 
 	def lowest_rated_comment
-		comments.rating_desc.last
+		comments.rating_asc.first
 	end
 
-		scope :value, -> { where(price: 0..500) }
+	def average_rating
+		comments.average(:rating).to_f
+	end
+
+	scope :value, -> { where(price: 0..500) }
 
 end
