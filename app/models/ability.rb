@@ -6,9 +6,10 @@ class Ability
     user ||= User.new # guest user (not logged in)
     can :read, Product
     can :manage, User, id: user.id
+    can [:read, :create], Comment
 
-    if user.email == "asim1204@gmail.com"
-        can :manage, [Product, User]
+    if user.admin?
+        can :manage, :all
     end
 
     # Define abilities for the passed in user here. For example:
