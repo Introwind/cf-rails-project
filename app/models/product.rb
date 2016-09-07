@@ -2,7 +2,7 @@ class Product < ApplicationRecord
 	has_many :orders
 	has_many :comments
 	validates :name, presence: true
-	validates :price, numericality: { only_integer: true }
+	validates :price, numericality: { only_float: true }
 
 	def highest_rated_comment
 		comments.rating_desc.first
