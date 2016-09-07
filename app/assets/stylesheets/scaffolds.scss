@@ -50,13 +50,16 @@ div {
 }
 
 .field_with_errors {
+  margin: auto;
+  width: 40%;
   padding: 2px;
   background-color: red;
   // display: table;
 }
 
 #error_explanation {
-  width: 450px;
+  margin: auto;
+  width: 40%;
   border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
