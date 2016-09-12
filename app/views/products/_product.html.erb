@@ -1,8 +1,8 @@
 <div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail prodthumb"><%= link_to image_tag(product.image_url, class: 'img-responsive'), product %>
         <div class="caption">
-            <h4 class="pull-right">£ <%= product.price %></h4>
-            <h4><%= link_to product.name, product %></h4>
+            <h4 class="pull-right"><strong>£ <%= product.price %></strong></h4>
+            <h4><strong><%= link_to product.name, product %></strong></h4>
             <p><%= truncate(product.description, length: 100) %></p>
         </div>
         <div class="ratings">        <% if admin? %>

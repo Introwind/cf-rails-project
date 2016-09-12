@@ -50,9 +50,9 @@
     padding: 0;
 }
 
-.thumbnail .caption-full {
+.thumbnail .caption-full, .thumbnail .caption {
     padding: 9px;
-    color: #333;
+    color: #353866;
 }
 
 .mainprod {
@@ -65,14 +65,47 @@
 	margin-top: 20px;
 }
 
+
 .alert {
-	text-align: center;
+    margin: 10px 0;
+	text-align: center; 
+    & a {
+    text-decoration: none;
+    }
 }
 
 .hero-spacer {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .users, .page-header, footer {
     text-align: center;
+}
+
+h1, h2, h3, h4, h5 {   
+    font-family: 'News Cycle', cursive, 'Oswald', sans-serif;
+}
+
+a {
+    color: inherit;
+}
+a:hover, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-brand:hover {
+    transition: 0.5s;
+    text-decoration: none;    
+    color: #618499;
+}
+
+.jumbotron {
+    background-color: gray;
+    & p {
+        font-size: inherit;
+    }
+}
+
+p {
+    margin: 10px 0 10px;
+}
+
+.pull-right {
+    margin: 0 0 10px;
 }

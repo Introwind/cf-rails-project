@@ -5,8 +5,13 @@
     <%= devise_error_messages! %>
 
     <div class="field">
-      <%= f.label :first_name, "First Name . Won't write to DB, need test"%>
+      <%= f.label :first_name, "First Name"%>
       <%= f.text_field :first_name, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name, "Last Name"%>
+      <%= f.text_field :last_name, class: "form-control" %>
     </div>
 
     <div class="field">
