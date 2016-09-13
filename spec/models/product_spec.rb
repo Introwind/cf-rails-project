@@ -14,7 +14,7 @@ describe Product do
     end
 
     it "returns the average rating of all comments" do
-      expect(@product.comments.average(:rating).to_i).to eq 3
+      expect(@product.comments.average(:rating).to_f).to eq 3.0
     end
 
     it "is not valid" do
