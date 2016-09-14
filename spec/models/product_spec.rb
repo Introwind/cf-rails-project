@@ -6,8 +6,8 @@ describe Product do
 
     # Checks if the average_rating method for product comments works
     before do
-      @product = Product.create!(name: "test-bike", image_url: "http://www.testurl.com", price: "4550")
-      @user = User.create!(email: "test2@test.com", password: "password", first_name: "test2", last_name: "test2")
+      @product = FactoryGirl.create(:product)
+      @user = FactoryGirl.build(:user)
       @product.comments.create!(rating: 1, user: @user, body: "I would not buy it again")
       @product.comments.create!(rating: 3, user: @user, body: "Good but the condition was not impresive as advertised")
       @product.comments.create!(rating: 5, user: @user, body: "Excelent bike, excelent service!")
