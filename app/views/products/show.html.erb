@@ -16,10 +16,13 @@
             <div class="thumbnail mainprod">
                 <%= image_tag(@product.image_url, class: "img-responsive") %>
                 <div class="caption-full">
-                    <h4 class="pull-right">£ <%= @product.price %></h4>
+                    <h4 class="pull-right">£ <%= sprintf('%.2f', (@product.price / 100) ) %></h4>
                     <h4><%= @product.name %></a>
                     </h4>
                     <p><%= @product.description %></p>
+                    <div><%= form_tag "/payments/create" do %>
+                          <%= render partial: "shared/stripe_checkout_button" %>
+                        <% end %></div>
                 </div>
                 <div class="ratings">
                     <p class="pull-right"><%= @product.comments.count %> reviews</p>
@@ -49,5 +52,3 @@
     </div>
 
 </div>
-
-      
