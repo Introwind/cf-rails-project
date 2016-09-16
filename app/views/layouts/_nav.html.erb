@@ -17,9 +17,9 @@
         <li class="<%= is_active?('/static_pages/about') %>"><%= link_to "About", '/static_pages/about' %></li>
         <li class="<%= is_active?('/static_pages/contact') %>"><%= link_to "Contact", '/static_pages/contact' %></li>
         <li class="<%= is_active?('/products') %>"><%= link_to "Products", '/products' %></li>
-        <li><%= form_tag("/products", method: "get", class: "navbar-form navbar-left", role: "search") do %>
+        <li><%= form_tag(products_path, method: "get", class: "navbar-form navbar-left", role: "search") do %>
               <div class="form-group">
-                  <%= text_field_tag "q", nil,  placeholder: 'Search our products..', class: "form-control" %>
+                  <%= text_field_tag :q, nil,  placeholder: 'Search our products..', class: "form-control" %>
               </div>
                   <%= button_tag(class: "btn btn-default", type: "submit") do %>
                   <span class="glyphicon glyphicon-search" aria-hidden="true">
@@ -50,3 +50,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<!-- script to console log search terms by user's firstname -->
+<% if user_signed_in? && params[:q] %>
+  <% logger.debug "Current user is: #{current_user.first_name}(id: #{current_user.id}) and he/she searched for #{params[:q]}" %>
+<% elsif params[:q] %>
+  <% logger.debug "Guest user has searched for #{params[:q]}" %>
+<% end %>
