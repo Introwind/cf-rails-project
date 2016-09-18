@@ -1,28 +1,27 @@
 <div class="container">
-
     <div class="row">
         <div class="col-md-2">
-            <p class="lead">Navigation</p>
-            <div class="list-group">
-                <%= link_to 'Back', products_path, class: "list-group-item" %>
+            <div class="btn group">
+                <%= link_to 'Back', products_path, class: "btn btn-primary" %>
                 <% if admin? %>
-                  <%= link_to 'Edit', edit_product_path(@product), class: "list-group-item" %>
-                  <%= link_to 'Delete', products_path, method: :delete, data: { confirm: "Are you sure?" }, class: "list-group-item" %>    
+                  <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-danger" %>
+                  <%= link_to 'Delete', products_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>    
                 <% end %>
             </div>
         </div>
 
-        <div class="col-md-10">
-            <div class="thumbnail mainprod">
-                <%= image_tag(@product.image_url, class: "img-responsive") %>
+        <div class="col-md-12 well">
+            <div class="col-md-4 zoom">
+                <%= image_tag(@product.image_url, class: "img-responsive zoom", data: { zoom_image: @product.image_url } ) %>
+            </div>
+            <div class="col-md-8">
                 <div class="caption-full">
                     <h4 class="pull-right">£ <%= sprintf('%.2f', (@product.price / 100) ) %></h4>
-                    <h4><%= @product.name %></a>
-                    </h4>
-                    <p><%= @product.description %></p>
+                    <h4><%= @product.name %></h4><hr>
+                    <p><%= @product.description %></p><hr>
                     <div><%= form_tag "/payments/create" do %>
-                    <%= hidden_field_tag(:product_id, @product.id) %>
-                          <%= render partial: "shared/stripe_checkout_button" %>
+                        <%= hidden_field_tag(:product_id, @product.id) %>
+                        <%= render partial: "shared/stripe_checkout_button" %>
                         <% end %></div>
                 </div>
                 <div class="ratings">
@@ -33,23 +32,15 @@
                     </p>
                 </div>
             </div>
-
-            <div class="well">
-                <div class="text-right">
-                <%= render 'new_comment' %>
-                </div>
-
-                    <h4>Product Reviews:</h4>
-                <hr>
-
-                <div class="row">
-                    <div class="col-md-12">
-                      <%= render 'comments' %>
-                    </div>
-                </div>
-            </div>
         </div>
 
+        <div class="col-md-12 well">
+            <div class="text-right">
+            <%= render 'new_comment' %>
+            </div>
+                <h4>Product Reviews:</h4>
+                <hr>
+                <%= render 'comments' %>
+        </div>
     </div>
-
 </div>

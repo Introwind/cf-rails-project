@@ -1,13 +1,23 @@
 $(document).on('turbolinks:load', function() {
 
-	$(".alert-danger, .alert-success").delay(3500).fadeOut(1500);
+	$(".alert-danger, .alert-success").delay(4000).fadeOut(1500); //Fading of alerts
 
-	$('.rating').raty({ path: '/assets', scoreName: 'comment[rating]' });
+	$('.rating').raty({ path: '/assets', scoreName: 'comment[rating]' }); //rating plugin
 	$('.rated').raty({ path: '/assets',
 		readOnly: true,
 		score: function() {
 			return $(this).attr('data-score');
 		}
+	});
+
+	$('.zoom').elevateZoom({
+			zoomWindowFadeIn: 500,
+			zoomWindowFadeOut: 500,
+			lensFadeIn: 500,
+			lensFadeOut: 500,
+            zoomWindowWidth:450,
+            zoomWindowHeight:450,
+            scrollZoom:true
 	});
 
 });
