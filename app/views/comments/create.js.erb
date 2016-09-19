@@ -1,0 +1,6 @@
+$('#new_comment').html("Thank you for the review!").css('border-bottom','1px solid #353866').css('padding-bottom', '15px').css('margin-bottom','25px');
+$('.reviews').prepend("<%= j render partial: 'comment', locals: { comment: @comment } %>");
+$('#average-rating').attr('data-score', "<%= @product.average_rating %>");
+$('#ratingavg').replaceWith("<%= sprintf('%.1f', @product.average_rating) %>")
+$('#ratingcount').replaceWith("<%= @product.comments.count %>")
+console.log("hello")

@@ -25,10 +25,10 @@
                         <% end %></div>
                 </div>
                 <div class="ratings">
-                    <p class="pull-right"><%= @product.comments.count %> reviews</p>
+                    <p class="pull-right"><span id="ratingcount"><%= @product.comments.count %></span> reviews</p>
                     <p>
-                    <div class="rated" data-score="<%= @product.average_rating %>"></div>
-                    <%= @product.average_rating.to_i %>.0 stars
+                    <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+                    <span id="ratingavg"><%= sprintf('%.1f', @product.average_rating) %></span>/5  stars
                     </p>
                 </div>
             </div>
@@ -36,11 +36,13 @@
 
         <div class="col-md-12 well">
             <div class="text-right">
-            <%= render 'new_comment' %>
+                <%= render 'new_comment' %>
             </div>
-                <h4>Product Reviews:</h4>
-                <hr>
+            <h4>Product Reviews:</h4>
+            <hr>
+            <div class="reviews">
                 <%= render 'comments' %>
+            </div>
         </div>
     </div>
 </div>

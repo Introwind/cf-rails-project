@@ -1,14 +1,6 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load ajaxSuccess', function() {
 
 	$(".alert-danger, .alert-success").delay(4000).fadeOut(1500); //Fading of alerts
-
-	$('.rating').raty({ path: '/assets', scoreName: 'comment[rating]' }); //rating plugin
-	$('.rated').raty({ path: '/assets',
-		readOnly: true,
-		score: function() {
-			return $(this).attr('data-score');
-		}
-	});
 
 	$('.zoom').elevateZoom({
 			zoomWindowFadeIn: 500,
@@ -20,4 +12,17 @@ $(document).on('turbolinks:load', function() {
             scrollZoom:true
 	});
 
+	refreshRating();
+
 });
+
+var refreshRating = function() {
+	$('.rating').raty({ path: '/assets', scoreName: 'comment[rating]' }); //rating plugin
+	$('.rated').raty({ path: '/assets',
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		}
+	});
+};
+
