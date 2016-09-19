@@ -11,28 +11,30 @@
         </div>
 
         <div class="col-md-12 well">
-            <div class="col-md-4 zoom">
-                <%= image_tag(@product.image_url, class: "img-responsive zoom", data: { zoom_image: @product.image_url } ) %>
-            </div>
-            <div class="col-md-8">
-                <div class="caption-full">
-                    <h4 class="pull-right">£ <%= sprintf('%.2f', (@product.price / 100) ) %></h4>
-                    <h4><%= @product.name %></h4><hr>
-                    <p><%= @product.description %></p><hr>
-                    <div><%= form_tag "/payments/create" do %>
-                        <%= hidden_field_tag(:product_id, @product.id) %>
-                        <%= render partial: "shared/stripe_checkout_button" %>
-                        <% end %></div>
+            <% cache @product do %>
+                <div class="col-md-4 prodshow">
+                    <%= image_tag(@product.image_url, class: "img-responsive zoom", data: { zoom_image: @product.image_url } ) %>
                 </div>
-                <div class="ratings">
-                    <p class="pull-right"><span id="ratingcount"><%= @product.comments.count %></span> reviews</p>
-                    <p>
-                    <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
-                    <span id="ratingavg"><%= sprintf('%.1f', @product.average_rating) %></span>/5  stars
-                    </p>
+                <div class="col-md-8">
+                    <div class="caption-full">
+                        <h4 class="pull-right">£ <%= sprintf('%.2f', (@product.price / 100) ) %></h4>
+                        <h4><%= @product.name %></h4><hr>
+                        <p><%= @product.description %></p><hr>
+                        <div><%= form_tag "/payments/create" do %>
+                            <%= hidden_field_tag(:product_id, @product.id) %>
+                            <%= render partial: "shared/stripe_checkout_button" %>
+                            <% end %></div>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right"><span id="ratingcount"><%= @product.comments.count %></span> reviews</p>
+                        <p>
+                        <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+                        <span id="ratingavg"><%= sprintf('%.1f', @product.average_rating) %></span>/5  stars
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            <% end -%>               
+         </div>
 
         <div class="col-md-12 well">
             <div class="text-right">

@@ -1,21 +1,23 @@
-<div class="col-sm-4 col-lg-4 col-md-4">
-    <div class="thumbnail prodthumb"><%= link_to image_tag(product.image_url, class: 'img-responsive'), product %>
-        <div class="caption">
-            <h4 class="pull-right"><strong>£ <%= sprintf('%.2f', (product.price / 100)) %></strong></h4>
-            <h4><strong><%= link_to product.name, product %></strong></h4>
-            <p><%= truncate(product.description, length: 100) %></p>
-        </div>
-        <div class="ratings">
-            <% if admin? %>
-                <%= link_to 'Edit', edit_product_path(product), class: "btn btn-primary btn-sm" %>
-                <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>          
-            <% end %>            
-        </div>
-        <div class="ratings">
-            <p class="pull-right"><%= product.comments.count %> reviews</p>
-            <p>
-                <div class="rated" data-score="<%= product.average_rating %>"></div>
-            </p>
+<% cache product do %>
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail prodthumb"><%= link_to image_tag(product.image_url, class: 'img-responsive'), product %>
+            <div class="caption">
+                <h4 class="pull-right"><strong>£ <%= sprintf('%.2f', (product.price / 100)) %></strong></h4>
+                <h4><strong><%= link_to product.name, product %></strong></h4>
+                <p><%= truncate(product.description, length: 100) %></p>
+            </div>
+            <div class="ratings">
+                <% if admin? %>
+                    <%= link_to 'Edit', edit_product_path(product), class: "btn btn-primary btn-sm" %>
+                    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm" %>          
+                <% end %>            
+            </div>
+            <div class="ratings">
+                <p class="pull-right"><%= product.comments.count %> reviews</p>
+                <p>
+                    <div class="rated" data-score="<%= product.average_rating %>"></div>
+                </p>
+            </div>
         </div>
     </div>
-</div>
+<% end -%>
