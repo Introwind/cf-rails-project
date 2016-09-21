@@ -37,14 +37,11 @@
          </div>
 
         <div class="col-md-12 well">
-            <div class="text-right">
-                <%= render 'new_comment' %>
-            </div>
+            <div class="text-right"><%= render 'new_comment' %></div>
             <h4>Product Reviews:</h4>
+            <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
             <hr>
-            <div class="reviews">
-                <%= render 'comments' %>
-            </div>
+            <div class="reviews"><%= render 'comments' %></div>
         </div>
     </div>
 </div>
