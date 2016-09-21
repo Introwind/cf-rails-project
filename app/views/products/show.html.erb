@@ -22,8 +22,10 @@
                         <p><%= @product.description %></p><hr>
                         <div><%= form_tag "/payments/create" do %>
                             <%= hidden_field_tag(:product_id, @product.id) %>
+                            <%= hidden_field_tag 'stripeToken' %>
                             <%= render partial: "shared/stripe_checkout_button" %>
-                            <% end %></div>
+                            <% end %>
+                        </div>
                     </div>
                     <div class="ratings">
                         <p class="pull-right"><span id="ratingcount"><%= @product.comments.count %></span> reviews</p>

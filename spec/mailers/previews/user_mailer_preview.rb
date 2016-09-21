@@ -4,4 +4,5 @@ class UserMailerPreview < ActionMailer::Preview
 		UserMailer.contact_form("test@example.com", "Bigman", "Hello hahasworld. Just ahahastesting gsaaha!")
 		
 	end
+	
 end

@@ -16,6 +16,7 @@ class PaymentsController < ApplicationController
 
 			if charge.paid
 				Order.create(user_id: @user.id, product_id: @product.id , total: @price)
+				UserMailer.purchase(@user, @product, @price).deliver_now
 			end
 
 		rescue Stripe::CardError => e
@@ -23,7 +24,7 @@ class PaymentsController < ApplicationController
 		end
 
 		redirect_to product_path(@product)
-		flash[:notice] = "Thanks your order. Please check your email."
+		flash[:notice] = "Thank you for your order. Please check your email."
 	end
 
 end

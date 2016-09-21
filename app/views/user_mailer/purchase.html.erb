@@ -1,0 +1,15 @@
+<table>
+  <tbody>
+    <tr>
+      <td><h2>Thank you for your purchase!</h2></td>
+    </tr>
+    <tr>
+      <td><p>Hi <%= @user.first_name %> <%= @user.last_name %>!</p></td>
+      <p>This email is confirmation of your purchase of <%= @product %></p>
+      <p>Total £<%= sprintf('%.2f', (@price / 100) ) %></p>
+    </tr>
+    <tr>
+      <td><p><strong>Your <%= @appname %> Team!</strong></p></td>
+    </tr>
+  </tbody>
+</table>
