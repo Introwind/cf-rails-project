@@ -18,7 +18,7 @@
 
   <div class="field form-group">
     <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control"  %>
+    <%= f.text_area :description, class: "form-control", size: "20x8"  %>
   </div>
 
   <div class="field form-group">
@@ -34,11 +34,6 @@
   <div class="field form-group">
     <%= f.label :price %>
     <%= f.text_field :price, class: "form-control"  %>
-  </div>
-
-  <div class="field form-group">
-    <%= label_tag ("Non-db field") %>
-    <%= text_area_tag () %>
   </div>
 
   <div class="actions">

@@ -27,6 +27,10 @@
     border-radius: 4px;
 }
 
+.carousel-caption {
+    color: black;
+}
+
 .caption {
     height: 130px;
     overflow: hidden;
@@ -107,7 +111,11 @@ p {
 }
 
 .pull-right {
-    margin: 0 0 10px;
+    margin: 0 0 0px;
+}
+
+.indexprice {
+    margin: 10px 0;
 }
 
 .zoom {
@@ -122,4 +130,8 @@ p {
 
 .stripe-button-el {
     
+}
+
+.gallery .img-responsive, .thumbnail a>img {
+    height: 180px;
 }

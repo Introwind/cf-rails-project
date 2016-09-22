@@ -12,10 +12,10 @@
 
         <div class="col-md-12 well">
             <% cache @product do %>
-                <div class="col-md-4 prodshow">
+                <div class="col-md-5 prodshow">
                     <%= image_tag(@product.image_url, class: "img-responsive zoom", data: { zoom_image: @product.image_url } ) %>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="caption-full">
                         <h4 class="pull-right">£ <%= sprintf('%.2f', (@product.price / 100) ) %></h4>
                         <h4><%= @product.name %></h4><hr>

@@ -5,7 +5,7 @@
 			<h2><%= @product_sale.name %></h2>
 			<p><%= @product_sale.description %></p>
 			<%= image_tag(@product_sale.image_url, class: "img-responsive")	%>
-			<p>Only €<%= @product_sale.price %></p>
+			<p>Only £<%= sprintf('%.2f', (@product_sale.price / 100) ) %></p>
 		</div>
 	</div>
 </div>
