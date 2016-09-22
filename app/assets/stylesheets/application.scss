@@ -128,10 +128,17 @@ p {
     padding-left: 0;
 }
 
-.stripe-button-el {
-    
-}
-
 .gallery .img-responsive, .thumbnail a>img {
     height: 180px;
+}
+
+@media screen and (max-width: 992px){
+    .gallery .img-responsive, .thumbnail a>img {
+    height: 140px;
+    }
+}
+@media screen and (max-width: 768px){
+    .gallery .img-responsive, .thumbnail a>img {
+    height: auto;
+    }
 }
