@@ -1,17 +1,13 @@
 <div class="container">
-
-	<div class="row">
-		<%= link_to '/products' do %>
-		<div class="panel panel-info">
-		  <div class="panel-heading">
-		    <p>Thank you. We have received your message and will respond as soon as possible. In the meantime check out our best value bikes below.<br> Click here for our full range.</p>
-		  </div><!-- / panel-heading -->		
-		</div><!-- / panel -->
-		<% end %>
-	</div>
- 
-  	<% @products.each do |product| %>
-		<%= render template: "/products/_product", locals: {product: product} %>
- 	<% end %>
-
+  <div class="row">
+    <div class="col-md-12">
+          <br>
+          <h1 class="banner page-header">Thank. You.</h1>
+          <h1 class="head">Contact Form Confirmation</h1>          
+          <p>Hi! Thanks for reaching out to us. We'll contact you back if we need to or if you've requested us to. <span class="glyphicon glyphicon-heart"></span></p>
+          <p>Share the love? If you've had a pleasant experience with Bike London, why not spread the love and tell your friends and family about us!</p>
+          <hr>
+          <p>Your Bike London team.</p>
+    </div>
+  </div>
 </div>

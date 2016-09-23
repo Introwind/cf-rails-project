@@ -1,19 +1,12 @@
 <div class="container">
   <div class="row">
 		<%= render template: "static_pages/_headtag"%>
-		<div class="col-md-2">
-			<p class="lead">Products</p>
-			<div class="list-group">
-				<% if admin? %>
-					<%= link_to '<strong>Add Product</strong>'.html_safe, new_product_path, class: "list-group-item"%>
-				<% end %>
-			    <a href="#" class="list-group-item">Bicycles</a>
-			    <a href="#" class="list-group-item">Helmets</a>
-			    <a href="#" class="list-group-item">Apparel</a>
-			</div>
-        </div>
-        <div class="col-md-10">
-
+    <div class="col-md-12">
+          <br>
+          <h1 class="banner page-header">Products.</h1>
+          <p>If you can't find what you're looking for, then contact us and we'll try our best to get what you need <span class="glyphicon glyphicon-heart"></span></p>
+          <br>
+    </div>
                 <div class="row carousel-holder">
 
                     <div class="col-md-12">
@@ -45,8 +38,7 @@
 
                 </div>
         	<div class="row">
-		    	     <%= render @products %>
+		    	 <%= render @products %>
 		    </div>
-		</div>	
   </div>
 </div>

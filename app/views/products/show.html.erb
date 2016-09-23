@@ -1,19 +1,20 @@
 <div class="container">
     <div class="row" data-product-id="<%= @product.id %>">
         <div class="col-md-2">
-            <div class="btn group">
-                <%= link_to 'Back', products_path, class: "btn btn-primary btn-xs" %>
-                <% if admin? %>
-                  <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-danger btn-xs" %>
-                  <%= link_to 'Delete', products_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-xs" %>    
-                <% end %>
-            </div>
+
         </div>
 
-        <div class="col-md-12 well">
-            <% cache @product do %>
+        <div class="col-md-12 well showcase">
+                <div class="btn-group">
+                    <%= link_to 'Back', products_path, class: "btn btn-primary btn-xs" %>
+                    <% if admin? %>
+                      <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-danger btn-xs" %>
+                      <%= link_to 'Delete', products_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn     btn-danger btn-xs" %>    
+                    <% end %>
+                </div>
                 <div class="col-md-5 prodshow">
-                    <%= image_tag(@product.image_url, class: "img-responsive zoom", data: { zoom_image: @product.image_url } ) %>
+                    <% cache @product do %>
+                        <%= image_tag(@product.image_url, class: "img-responsive zoom", data: { zoom_image: @product.image_url } ) %>
                 </div>
                 <div class="col-md-7">
                     <div class="caption-full">
@@ -27,7 +28,7 @@
                             <% end %>
                         </div>
                     </div>
-            <% end -%>               
+                        <% end -%>               
                     <div class="ratings">
                         <p class="pull-right"><span id="ratingcount"><%= @product.comments.count %></span> reviews</p>
                         <p>

@@ -1,16 +1,10 @@
 <% if signed_in? %>
 	<h4>Add a review:</h4>
 	<%= form_for([@product, @product.comments.build], remote: true) do |f| %>
-		<p>
-			<%= f.text_area :body, size: '30x5' %>
-		</p>
-		<p>
-		<div class="rating"></div>
-			<%= f.label :rating %>
-		</p>
-		<p>
-			<%= f.submit "Leave a Review", class: "btn btn-success btn-sm"%>
-		</p>
+		<%= f.text_area :body, size: '30x5' %>
+			<div class="rating"></div>
+		<%= f.label :rating %>
+		<%= f.submit "Leave a Review", class: "btn btn-success btn-sm"%>
   <% end %>
   <% else %>
   <h4><i>You must be signed in to leave a review.</i></h4>

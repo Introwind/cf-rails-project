@@ -1,45 +1,48 @@
 <div class="container">
   <div class="row">
-    <header class="jumbotron hero-spacer">
-        <h1>Bike London</h1>
-        <p>Explore the city in the best way possible. Take a look at our selection of amazing bikes. Ready to be picked up in-store immediately! <span class="glyphicon glyphicon-heart"></span> </p>
-        <p><%= link_to "Our Selection!", products_path, class: "btn btn-primary btn-large" %></p>
-    </header>
-
-    <hr>
-
-    <%= render template: "static_pages/_headtag"%>
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <% @products.each_with_index do |product, i| %>
-          <li data-target="#carousel-example-generic" data-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
-        <% end %>
-      </ol>
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-       <% @products.each do |product| %>
-        <div class="item<%= " active" if product == @products.first %>">
-         <%= image_tag(product.image_url) %>
-          <div class="carousel-caption">
-           <%= product.name %>
-          </div>
-        </div>
-       <% end %>
-      </div>
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+    <div class="col-md-12">
+          <br>
+          <h1 class="banner page-header">Explore. London.</h1>
+          <p>Avoid the traffic and travel the city in the best way possible. Take a look at our selection of great value bikes. Ready to be picked up in-store immediately! <span class="glyphicon glyphicon-heart"></span> </p>
+          <br>
+          <blockquote class="blockquote-reverse">
+            <x>Every time I see an adult on a bicycle, I no longer despair for the future of the human race.</x>
+            <x id="quote"><cite title="Source Title">H. G. Wells</cite></x>
+          </blockquote>
+          <br><hr>
     </div>
   </div>
 </div>
 
-<style>.carousel-inner>.item>img {
-	display: inline-block;
-}"</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">New & Used Bikes!</div>
+        <div class="panel-body">
+          <%= link_to image_tag("bikelogo", class: "img-circle"), products_path %><hr id="align">
+        <p>All our bikes are in pristine condition and we can guarantee you'll love what you get. You can browse our full selection right <strong><%= link_to "here", products_path %></strong> and order for collection later today.</p><p><br>Otherwise you can just head over to the shop and see them in person for yourself.</p><p><br>We've got something for everyone!</p></div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Maintenance & Repair!</div>
+        <div class="panel-body">
+          <%= link_to image_tag("repairlogo", class: "img-circle"), static_pages_contact_path %><hr id="align">
+        <p>Need you gear fixed or your tyre replace? Or just need a health and safety inspection? No problem, bring your bike over for a checkup.</p><p><br>Depending on the model of your bike we can offer you a quote beforehand if you'd prefer. Drop us a message <strong><%= link_to "here.", static_pages_contact_path %></strong></p><p><br>Thanks!</p></div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Sell To Us!</div>
+        <div class="panel-body">
+          <%= link_to image_tag("moneylogo", class: "img-circle"), static_pages_contact_path %><hr id="align">
+        <p>If you've got an old bike, or just have no space or love for yours anymore we can buy it off of you.</p><p> We'll do our own checks once you bring it in to the store, and offer you a price the following day.</p><p><br>Does that sound good? Awesome. See you in store.</p></div>
+      </div>
+    </div>    
+  </div>
+</div>
+          
+
