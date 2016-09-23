@@ -40,7 +40,8 @@
         	<div class="row">
 		    	 <%= render @products %>
 		    </div>
-
+            <% if admin? %>
             <%= link_to "Add Product", new_product_path, class: "btn btn-primary" %>
+            <% end -%>
   </div>
 </div>
