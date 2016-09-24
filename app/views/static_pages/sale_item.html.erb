@@ -1,12 +1,16 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="well showcase">
-			<h1>Our best value bike!</h1>
-			<h2><%= @product_sale.name %></h2>
-			<p><%= @product_sale.description %></p>
-			<%= image_tag(@product_sale.image_url, class: "img-responsive")	%>
-			<p>Only £<%= sprintf('%.2f', (@product_sale.price / 100) ) %></p>
-		</div>
-	</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+          <br>
+          <h1 class="banner page-header">Best. Value.</h1>
+          <p>Looking for a basic solution to get you on the saddle quickly? <span class="glyphicon glyphicon-heart"></span></p>
+          <h1 class="head"><%= @product.value.first.name %></h1>
+          <h1 class="head">Only £<%= sprintf('%.2f', (@product.value.first.price / 100) ) %></h1>
+          <br>
+          <p><%= @product.first.description %></p>
+          <p><%= link_to "Find out more", product_path(@product.value.first ) %></p>
+          <br>
+          <%= link_to image_tag(@product.value.first.image_url, class: "img-responsive"), product_path(@product.value.first) %>
+    </div>
+  </div>
 </div>
-

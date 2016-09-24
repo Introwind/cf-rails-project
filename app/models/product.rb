@@ -16,6 +16,6 @@ class Product < ApplicationRecord
 		comments.average(:rating).to_f
 	end
 
-	scope :value, -> { where(price: 0..500) }
+	scope :value, -> { order(:price) }
 
 end

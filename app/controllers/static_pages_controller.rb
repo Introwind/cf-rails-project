@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
   end
 
   def sale_item
-    @product_sale = Product.first
+    @product = Product.all
   end
 
   def thank_you

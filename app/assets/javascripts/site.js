@@ -14,6 +14,8 @@ $(document).on('turbolinks:load ajaxSuccess', function() {
 
 	refreshRating();
 
+	$('[data-toggle="tooltip"]').tooltip();
+
 });
 
 var refreshRating = function() {

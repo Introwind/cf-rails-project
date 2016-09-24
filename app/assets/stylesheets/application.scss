@@ -82,7 +82,7 @@
     margin-top: 25px;
 }
 
-.users, .page-header, footer {
+.page-header, footer {
     text-align: center;
 }
 
@@ -193,4 +193,8 @@ p {
 
 #left {
     text-align: left;
+}
+
+.clearboth {
+    clear: both;
 }
