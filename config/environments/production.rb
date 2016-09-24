@@ -91,8 +91,7 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
-  config.assets.digest = true #latest try 
-  config.web_socket_server_url = "wss://bike-london.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://bike-london.herokuapp.com', 'http://bike-london.herokuapp.com', /http:\/\/bike-london.herokuapp.com.*/, 'bike-london.herokuapp.com']
+  config.web_socket_server_url = "wss://bikestask.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://bikestask.herokuapp.com', 'http://bikestask.herokuapp.com']
 
 end
