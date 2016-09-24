@@ -80,7 +80,6 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
-
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.cache_store = :dalli_store,
@@ -92,7 +91,8 @@ Rails.application.configure do
                      :socket_failure_delay => 0.2,
                      :down_retry_delay => 60
                     }
+  config.assets.digest = true #latest try 
   config.web_socket_server_url = "wss://bike-london.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://bike-london.herokuapp.com', 'http://bike-london.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://bike-london.herokuapp.com', 'http://bike-london.herokuapp.com', /http:\/\/bike-london.herokuapp.com.*/, 'bike-london.herokuapp.com']
 
 end
