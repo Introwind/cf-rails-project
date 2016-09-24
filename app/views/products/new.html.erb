@@ -1,7 +1,12 @@
-<div class="container users">
-	<h1>New Product</h1>
-
-	<%= render 'form', product: @product %>
-
-	<%= link_to 'Back', products_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <br>
+      <h1 class="banner page-header">New. Product.</h1>
+      <br>
+		<%= render 'form', product: @product %>
+	
+		<%= link_to 'Back', products_path %>
+    </div>
+  </div>
 </div>
