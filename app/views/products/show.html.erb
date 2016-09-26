@@ -37,6 +37,9 @@
         <div class="col-md-12 well">
             <div class="text-right"><%= render 'new_comment' %></div>
             <h4>Product Reviews:</h4>
+            <% if @product.comments.count == 0 && user_signed_in? %>
+            <i>Be the first to leave a review!</i>                
+            <% end%>
             <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
             <hr>
             <div class="reviews"><%= render 'comments' %></div>
